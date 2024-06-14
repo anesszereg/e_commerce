@@ -15,11 +15,7 @@ function Cards() {
     setQuantity(quantity + 1);
   };
 
-  const decreaseQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  };
+
 
   return (
     <div className='big_container'>
@@ -37,7 +33,7 @@ function Cards() {
       <div className="container_infos">
         <h3>Sneaker Company</h3>
         <h1 id="titre_produit">Fall Limited Edition Sneakers</h1>
-        <b>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</b>
+        <b>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they ll withstand everything the weather can offer.</b>
         <div className="prix">
           <div className="left1 prix-desktop">
             $<b id="price_product">125.00</b>
@@ -55,7 +51,9 @@ function Cards() {
               <LuPlus />
             </button>
             <div className="number" id="quantity">{quantity}</div>
-            <button id="minus-btn" onClick={decreaseQuantity}>
+            <button id="minus-btn" onClick={()=>{
+              setQuantity(quantity > 1 ? quantity - 1 : 1);
+            }}>
               <TiMinus />
             </button>
           </div>
