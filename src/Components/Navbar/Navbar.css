@@ -105,17 +105,19 @@ display: flex;
   text-align: start;
   font-size: 30px;
 }
-.info {
+.info_text {
   display: flex;
+  /* flex-direction: column; */
   align-items: center;
-  justify-content: space-between;
-  /* padding: 30px; */
+/* gap: 30px; */
+  padding: 30px;
 
 padding: 20px;
   gap: 20px;
 }
 .price {
   display: flex;
+  flex-direction: column;
   font-size: 18px;
 }
 .checkout {
