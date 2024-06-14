@@ -59,3 +59,123 @@
     padding-top: 70px;
 
 }
+
+
+.right-desktop{
+    margin-top: 50px;
+    margin-left: 80px;
+    text-align: start;
+    width: 30%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 150px;
+}
+
+h3{
+    color: hsl(26, 100%, 55%);
+}
+h1{
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+.prix-desktop{
+    display: flex;
+    gap: 20px;
+    font-size: 25px;
+}
+.promotion{
+    color: hsl(26, 100%, 55%);
+    background-color: hsl(25, 100%, 94%);
+    height: 25px;
+    width: 37px;
+    font-size: 16px;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 6px;
+
+}
+.prix-desktop  b{
+    font-weight: bolder;
+    /* font-size: 25px; */
+}
+.right2 {
+    color: rgb(165, 161, 161);
+    text-decoration: line-through;
+    /* font-size: 20px ; */
+}
+#box{
+    position: relative;
+}
+
+.boxs{
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+.button1{
+
+    display: flex;
+width: 200px;
+padding: 10px 20px;
+border: 1px solid rgb(165, 161, 161);
+border-radius: 10px;
+justify-content: space-between;
+align-items: center;
+
+}
+
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+}
+
+.btn1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 12px;
+    color:white;
+    background-color: hsl(26, 100%, 55%);
+    box-shadow:5PX 0 10PX 1px  hsl(26, 100%, 55%);
+    height: 50px;
+    padding: 10px 20px;
+     border-radius: 10px;
+     cursor: pointer;
+}
+
+.number{
+    border: none;
+    text-align: center;
+}
+
+
+
+
+
+.center{
+    width: 40%;
+}
+
+.filter{
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+top: 0;
+
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+
+
+
+
+}

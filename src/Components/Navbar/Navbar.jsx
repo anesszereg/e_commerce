@@ -22,6 +22,7 @@ function Navbar() {
         </div>
         <div className='right' >
         <img src={shop} alt=""  />
+
         <img src={avatar} alt="" />
 
         </div>
