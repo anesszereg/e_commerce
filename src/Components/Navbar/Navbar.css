@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  height: 70px;
+  background-color: #fff;
+  border-bottom: 2px solid #eee;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  cursor: pointer;
+  margin-left: 30px;
+}
+
+.menu li {
+  font-size: 14px;
+  font-weight: 400;
+  color: #222;
+  text-transform: uppercase;
+  padding: 10px 0;
+  margin: 0 10px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.menu li:hover {
+  scale: 1.1;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.right img {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  cursor: pointer;
+}
