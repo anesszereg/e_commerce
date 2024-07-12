@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
 import './Cards.css';
-import img1 from '../../assets/images/image-product-1.jpg';
-import img2 from '../../assets/images/image-product-2.jpg';
-import img3 from '../../assets/images/image-product-3.jpg';
-import img4 from '../../assets/images/image-product-4.jpg';
+
 import {LuPlus} from "react-icons/lu";
 import {TiMinus} from "react-icons/ti";
 
+import {FaCircleChevronLeft} from "react-icons/fa6";
+import {FaChevronCircleRight} from "react-icons/fa";
 function Cards({newOrder, data}) {
-    const [selectedImage, setSelectedImage] = useState(img1);
+
+  
+    const [selectedImage, setSelectedImage] = useState(data[0].image[0]);
     const [quantity, setQuantity] = useState(1);
 
     const increaseQuantity = () => {
@@ -20,15 +21,51 @@ function Cards({newOrder, data}) {
 
     const handleOrder = () => {
 
-      const newArr = data.map((i) => {
-        return [i.name, i.price, quantity ,selectedImage];
-      });
+        const newArr = data.map((i) => {
+            return [i.name, i.price, quantity, selectedImage];
+        });
 
-      newOrder(newArr[0]);
-
+        newOrder(newArr[0]);
 
 
     }
+
+    // function for slides
+
+    const [index, setIndex] = useState([
+        data[0].image[0],
+        data[0].image[1],
+        data[0].image[2],
+        data[0].image[3]
+
+    ]);
+
+    const nextSlide = () => {
+        const newIndex = index.map((i, e) => {
+            if (e === 0) {
+                return index[3];
+            } else {
+                return index[e - 1];
+            }
+        });
+
+        setIndex(newIndex);
+
+
+    }
+
+    const prevSlide = () => {
+        const newIndex = index.map((i, e) => {
+            if (e === 3) {
+                return index[0];
+            } else {
+                return index[e + 1];
+            }
+        });
+
+        setIndex(newIndex);
+    }
+
 
     return (
         <div className='big_container'>
@@ -101,6 +138,35 @@ function Cards({newOrder, data}) {
                     </button>
                 </div>
             </div>
+
+            {/* <div className="slides">
+                <div className="">
+
+                    <div className="big_img">
+                        <FaCircleChevronLeft size={40}
+                            onClick={nextSlide}/>
+                        <img src={
+                                index[0]
+                            }
+                            alt=""
+                            className="SelectedImage"/>
+                        <FaChevronCircleRight size={40}
+                            onClick={prevSlide}/>
+                    </div>
+                    <div className="small-img">
+                        {
+                        data[0].image.map((i, e) => (
+                            <img src={i}
+                                alt=""
+                                key={e}
+                                onClick={
+                                    () => setSelectedImage(i)
+                                }/>
+                        ))
+                    } </div>
+                </div>
+
+            </div> */}
         </div>
     );
 }

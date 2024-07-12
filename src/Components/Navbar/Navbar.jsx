@@ -5,8 +5,12 @@ import avatar from '../../assets/images/image-avatar.png'
 import {useState} from 'react';
 import {MdDelete} from "react-icons/md";
 import url from '../../assets/images/image-product-1.jpg'
+import { Link, useNavigate } from 'react-router-dom';
 
 function Navbar({counter, order}) {
+
+
+    const navigate = useNavigate()
 
     const [show, setShow] = useState(false)
 
@@ -22,14 +26,40 @@ function Navbar({counter, order}) {
                     alt=""
                     className='logo'/>
                 <ul className='menu'>
-                    <li>collection
+                    
+                    <li>
+                        
+                        <Link to='app/'>
+                        collection
+                        </Link>
                     </li>
                     <li>
-                        Men</li>
-                    <li>Women
+                        <Link to={'app/Men'}>
+                        
+                        Men
+                        </Link>
+                        </li>
+                    <li>
+                        <Link to={'app/women'}>
+                        Women
+                        </Link>
                     </li>
                     <li>About</li>
                     <li>Contact</li>
+
+                    <button 
+                    
+                    onClick={()=> navigate('Settings')}
+                    
+                    
+                    
+                    style={{
+                        border:'1px solid #cccc',
+                        backgroundColor:'#e9e9e9',
+                        padding:' 0 5px'
+                    }}>
+                        go to settings
+                    </button>
                 </ul>
             </div>
             <div className='right'>

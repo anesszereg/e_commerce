@@ -18,6 +18,23 @@
     height: 100%;
     object-fit: cover;
 }
+.big_img{
+    width: 500px;
+    height: 500px;
+    margin: 50px 0;
+    overflow: hidden;
+    display: 
+    flex;
+    justify-content: center;
+    align-items: center;
+}
+.big_img img{
+    width: 400px;
+    border-radius: 20px;
+    height: 400px;
+    object-fit: contain;
+}
+
 
 .small-img{
     display: flex;
@@ -176,5 +193,18 @@ top: 0;
 
 
 
+
+}
+
+
+.slides{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
 
 }
