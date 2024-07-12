@@ -7,6 +7,8 @@ import Home from './Pages/Home.jsx'
 import Women from './Pages/women.jsx'
 import Men from './Pages/men.jsx'
 import Settings from './Pages/Settings.jsx'
+import { store } from './Redux/Store.js'
+import { Provider } from 'react-redux'
 
 
 
@@ -22,7 +24,7 @@ const router = createBrowserRouter([
     element: <App/>,
     children: [
       {
-        path: '/home',
+        path: 'app/Home',
         element: <Home />
     
       },
@@ -60,7 +62,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <App /> */}
+    <Provider store={store}>
+
     <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>,
 )

@@ -6,6 +6,14 @@ import {TiMinus} from "react-icons/ti";
 
 import {FaCircleChevronLeft} from "react-icons/fa6";
 import {FaChevronCircleRight} from "react-icons/fa";
+
+import {useDispatch} from 'react-redux';
+import { increment } from '../../Redux/CounterSlice';
+
+
+
+
+
 function Cards({newOrder, data}) {
 
   
@@ -16,16 +24,15 @@ function Cards({newOrder, data}) {
         setQuantity(quantity + 1);
     };
 
+    const dispatch = useDispatch();
+
 
     // function to select order
 
     const handleOrder = () => {
 
-        const newArr = data.map((i) => {
-            return [i.name, i.price, quantity, selectedImage];
-        });
+        dispatch(increment(1));
 
-        newOrder(newArr[0]);
 
 
     }

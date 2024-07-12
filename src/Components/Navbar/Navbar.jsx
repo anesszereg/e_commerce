@@ -6,18 +6,22 @@ import {useState} from 'react';
 import {MdDelete} from "react-icons/md";
 import url from '../../assets/images/image-product-1.jpg'
 import { Link, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-function Navbar({counter, order}) {
+function Navbar({ order}) {
 
 
     const navigate = useNavigate()
-
     const [show, setShow] = useState(false)
 
-    console.log('====================================');
-    console.log(order);
-    console.log('====================================');
+    const catchCounter = useSelector((state) => state.Counter.value)
 
+    console.log('====================================');
+    console.log(catchCounter);
+
+
+
+    
     return (
         <div className='container'>
             <div className="left">
@@ -29,7 +33,7 @@ function Navbar({counter, order}) {
                     
                     <li>
                         
-                        <Link to='app/'>
+                        <Link to='app/Home'>
                         collection
                         </Link>
                     </li>
@@ -74,7 +78,7 @@ function Navbar({counter, order}) {
 
 
                     <div class="number_of_orders">
-                        {counter}</div>
+                        {catchCounter}</div>
 
                     {
                     show ? <div class="cart_container">
